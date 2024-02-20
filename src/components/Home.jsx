@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "./shared/Header";
 import "./Home.css";
 import FAQ from "./FAQ";
+import LoginModal from "./registration/LoginModal";
 
 const services = [
   {
@@ -23,9 +24,21 @@ const services = [
 ];
 
 const Home = () => {
+  const [showLogin, setShowLogin] = useState(false);
+
+  const handleShowLogin = () => {
+    setShowLogin(true);
+  };
+
+  const handleCloseLogin = () => {
+    setShowLogin(false);
+  };
+
   return (
     <div className="home-container">
-      <Header />
+      <Header handleShowLogin={handleShowLogin} />
+
+      <LoginModal show={showLogin} onClose={handleCloseLogin} />
 
       {/* Welcome Section */}
       <section className="welcome-section">

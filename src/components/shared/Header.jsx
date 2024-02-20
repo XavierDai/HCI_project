@@ -21,11 +21,12 @@ const Tabs = [
 ];
 
 const Header = (props) => {
+  const { handleShowLogin } = props;
   const [activeTab, setActiveTab] = useState(null);
 
   return (
     <div>
-      <Navbar Tabs={Tabs} />
+      <Navbar Tabs={Tabs} handleShowLogin={handleShowLogin} />
     </div>
   );
 };

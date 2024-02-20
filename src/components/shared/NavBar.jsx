@@ -1,8 +1,7 @@
 import React from "react";
 import "./NavBar.css";
-
 const Navbar = (props) => {
-  const { Tabs } = props;
+  const { Tabs, handleShowLogin } = props;
   return (
     <header className="navbar">
       <div className="navbar-logo">
@@ -22,7 +21,7 @@ const Navbar = (props) => {
       </nav>
 
       <div className="navbar-login">
-        <button>Login</button>
+        <button onClick={handleShowLogin}>Login</button>
       </div>
     </header>
   );
